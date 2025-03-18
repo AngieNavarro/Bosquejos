@@ -55,58 +55,6 @@
         display: grid;
         justify-content: center;
     }
-
-    .container {
-        background:gainsboro;
-        width: 500px;
-        height: 500px;
-        position: relative;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        border: 2px solid black;
-
-    }
-
-    .item img {
-        width: 250px;
-        height: 250px;
-        position: absolute;
-        right: 0;
-        border: 2px inset red;
-
-    }
-
-    .item2 img {
-        width: 250px;
-        height: 250px;
-        position: absolute;
-        left: 0;
-        border: 2px inset red;
-
-    }
-
-    .item3 img {
-        width: 250px;
-        height: 250px;
-        position: absolute;
-        left: 0;
-        top: 250px;
-        bottom: 0;
-        border: 2px inset red;
-
-    }
-
-    .item4 img {
-        width: 250px;
-        height: 250px;
-        position: absolute;
-        right: 0;
-        top: 250px;
-        bottom: 0;
-        border: 2px inset red;
-    }
-
     section {
         margin-left: 10%;
         margin-right: 10%
@@ -117,16 +65,79 @@
         height: 708px;
     }
 
-    .derecha {
-        display: grid;
-        justify-content: right;
-    }
-    .izquierda{
-        display: grid;
-        justify-content: left;
-    }
     h1 {
         text-align: center;
+    }
+
+    /* mejora */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 600px;
+        background: gainsboro;
+        border: 2px solid black;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s;
+        border: 2px inset red;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    .izquierda {
+        display: flex;
+        justify-content: flex-start;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .derecha {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px;
+        width: 100%;
+    }
+    .centrada{
+        display: flex;
+        justify-content:center ;
+        padding: 20px;
+        width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+
+
+    @media (max-width: 600px) {
+        .gallery {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .izquierda {
+            justify-content: center;
+        }
+
+        .derecha {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .gallery {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 
@@ -136,20 +147,11 @@
     <br><br><br>
     <h1 class="titulo">BOSQUEJOS</h1>
     <div class="centro">
-        <div class="container">
-            <div class="item">
-                <img src="./img/dibujo.jpg" alt="">
-            </div>
-            <div class="item2">
-                <img src="./img/lengua.jpg" alt="">
-            </div>
-            <div class="item3">
-                <img src="./img/ojos.jpg" alt="">
-            </div>
-            <div class="item4">
-                <img src="./img/pose.jpg" alt="">
-            </div>
-
+        <div class="gallery">
+            <img src="img/dibujo.jpg" alt="Imagen 1">
+            <img src="img/lengua.jpg" alt="Imagen 2">
+            <img src="img/ojos.jpg" alt="Imagen 3">
+            <img src="img/pose.jpg" alt="Imagen 4">
         </div>
     </div>
     <section>
@@ -337,7 +339,10 @@
     </section>
     <section>
         <h1>Seccion 3</h1>
-        <img src="./img/mira.jpg" alt="observacion">
+        <div class="centrada">
+            <img src="./img/mira.jpg" alt="observacion">
+        </div>
+
         <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit ab maiores fuga, accusamus saepe optio!
             Asperiores eveniet aliquam est alias totam animi, quibusdam quia ab, iste tempora repudiandae, corrupti
@@ -361,9 +366,9 @@
         </p>
 
     </section>
-    <footer><span class="pie">Pie de pagina @JANA 
+    <footer><span class="pie">Pie de pagina @JANA
 
-    </span></footer>
+        </span></footer>
 </body>
 
 </html>
