@@ -1,7 +1,5 @@
 # Pagina de Bosquejos
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/ee36aebe-c928-47fb-9220-f19a9aec1170" style="width: 450px;"/>
-</p>
+
  <p>
 Este proyecto consiste en una página web sencilla diseñada para recopilar y mostrar imágenes obtenidas de Pinterest. Se ha implementado una estructura de maquetación utilizando HTML y CSS para lograr un diseño limpio y atractivo.
  </p>
